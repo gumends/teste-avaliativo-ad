@@ -42,5 +42,5 @@ Se desejar abrir o arquivo XLSX diretamente no Visual Studio Code, você pode us
 
 Para instalar, clique no link abaixo ou pesquise diretamente no VSCode:
 
-Excel Viewer - GrapeCity
+https://marketplace.visualstudio.com/items?itemName=GrapeCity.gc-excelviewer
 
