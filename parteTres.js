@@ -25,16 +25,21 @@ try {
 
 const dir = './resultados';
 const localDir = '/parteTres';
-const xlsxTransform = (results) => {
-    const workbook = XLSX.utils.book_new();
-    const worksheet = XLSX.utils.json_to_sheet(results);
 
+const generateDir = (dir, localDir) => {
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir);
         if (dir) fs.mkdirSync(dir + localDir);
     } else if (!fs.existsSync(dir + localDir)) {
         fs.mkdirSync(dir + localDir);
     }
+}
+
+const xlsxTransform = (results) => {
+    const workbook = XLSX.utils.book_new();
+    const worksheet = XLSX.utils.json_to_sheet(results);
+
+    generateDir(dir, localDir);
 
     XLSX.utils.book_append_sheet(workbook, worksheet, 'Resultados');
 
@@ -54,12 +59,7 @@ const jsonTransform = (results) => {
         total: results.length
     });
 
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir);
-        if (dir) fs.mkdirSync(dir + localDir);
-    } else if (!fs.existsSync(dir + localDir)) {
-        fs.mkdirSync(dir + localDir);
-    }
+    generateDir(dir, localDir);
 
     fs.writeFileSync(dir + localDir + '/parteTres.json', JSON.stringify({ results, total: results.length }, null, 2));
     console.log('Resultados salvos em json');
