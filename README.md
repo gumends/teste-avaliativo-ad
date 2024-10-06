@@ -1,5 +1,7 @@
 # Teste Avaliativo
 
+Para usar siga as seguintes orientações
+
 1. Instale o Node.js
 ```bash
 npm install
