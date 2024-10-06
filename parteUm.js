@@ -23,7 +23,7 @@ const dir = './resultados';
 const localDir = '/parteUm';
 const xlsxTransform = (results) => {
     const workbook = XLSX.utils.book_new();
-    const worksheet = XLSX.utils.json_to_sheet(results, { header: ['Número do Processo', 'Data de Criação', 'Assunto do Processo'] });
+    const worksheet = XLSX.utils.json_to_sheet(results);
 
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir);
@@ -73,21 +73,18 @@ async function run() {
 
     const results = findResult.map(process => {
         return {
-            'Número do Processo': process.nP,
+            'Número do Protocolo': process.nP,
             'Data de Criação': process.created_at,
             'Assunto do Processo': process.config_metadata.title
         };
     });
 
     const type = process.argv[2];
-
-    if (type === '-d') {
-        jsonTransform(results)
-    } else if (type === '-l') {
-        console.log({ results, total: results.length });
-    } else {
-        xlsxTransform(results)
-    }
+    console.log(type);
+    
+    if (type === '-d') jsonTransform(results) 
+    if (type === '-l') console.log({ results, total: results.length })
+    if (type === undefined) xlsxTransform(results)
 
     await DBClient.close();
 }

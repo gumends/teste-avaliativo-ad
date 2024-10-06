@@ -97,7 +97,7 @@ async function run() {
     const result = findResult.map(async (process) => {
         const lastIndex = process.timeline[process.timeline.length - 1];
         return {
-            'Número do Processo': process.nP,
+            'Número do Protocolo': process.nP,
             'Data de Criação': process.created_at,
             'Assunto do Processo': process.config_metadata.title,
             'Último Destino': lastIndex.to ?
@@ -109,13 +109,9 @@ async function run() {
     const results = await Promise.all(result);
     const type = process.argv[2];
 
-    if (type === '-d') {
-        jsonTransform(results)
-    } else if (type === '-l') {
-        console.log({ results, total: results.length });
-    } else {
-        xlsxTransform(results)
-    }
+    if (type === '-d') jsonTransform(results)
+    if (type === '-l') console.log({ results, total: results.length })
+    if (type === undefined) xlsxTransform(results)
 
     await DBClient.close();
 }

@@ -126,13 +126,9 @@ async function run() {
     const results = await Promise.all(result);
     const type = process.argv[2];
 
-    if (type === '-d') {
-        jsonTransform(results)
-    } else if (type === '-l') {
-        console.log({ results, total: results.length });
-    } else {
-        xlsxTransform(results)
-    }
+    if (type === '-d') jsonTransform(results)
+    if (type === '-l') console.log({ results, total: results.length })
+    if (type === undefined) xlsxTransform(results)
 
     await DBClient.close();
 }

@@ -19,7 +19,7 @@ try {
     return;
 }
 
-const dir = './resultados' ;
+const dir = './resultados';
 const localDir = '/parteDois';
 
 const xlsxTransform = (results) => {
@@ -60,7 +60,7 @@ const jsonTransform = (results) => {
         fs.mkdirSync(dir + localDir);
     }
 
-    fs.writeFileSync( dir + localDir + '/parteDois.json', JSON.stringify({ results, total: results.length }, null, 2));
+    fs.writeFileSync(dir + localDir + '/parteDois.json', JSON.stringify({ results, total: results.length }, null, 2));
     console.log('Resultados salvos em json');
 }
 
@@ -73,7 +73,7 @@ async function run() {
     const results = findResult && findResult.map(process => {
         const lastIndex = process.timeline[process.timeline.length - 1]
         return {
-            'Número do Processo': process.nP,
+            'Número do Protocolo': process.nP,
             'Data de Criação': process.created_at,
             'Assunto do Processo': process.config_metadata.title,
             'Último Destino': lastIndex.to ? lastIndex.to.userId : lastIndex.from.userId
@@ -82,13 +82,9 @@ async function run() {
 
     const type = process.argv[2];
 
-    if (type === '-d') {
-        jsonTransform(results)
-    } else if (type === '-l') {
-        console.log({ results, total: results.length });
-    } else {
-        xlsxTransform(results)
-    }
+    if (type === '-d') jsonTransform(results)
+    if (type === '-l') console.log({ results, total: results.length })
+    if (type === undefined) xlsxTransform(results)
 
     await DBClient.close();
 }
