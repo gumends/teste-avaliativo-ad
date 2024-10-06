@@ -6,7 +6,7 @@ Para iniciar o projeto, siga as etapas abaixo:
 
 ### 1. Instalação do Node.js
 
-Certifique-se de que o Node.js está instalado. Em seguida, execute o comando:
+Execute o comando abaixo para instalar as dependências do projeto:
 
 ```bash
 npm install
