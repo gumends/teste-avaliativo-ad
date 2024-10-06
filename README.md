@@ -1,39 +1,46 @@
 # Teste Avaliativo
 
-Para usar siga as seguintes orientações
+## Instruções
 
-1. Instale o Node.js
+Para iniciar o projeto, siga as etapas abaixo:
+
+### 1. Instalação do Node.js
+
+Certifique-se de que o Node.js está instalado. Em seguida, execute o comando:
+
 ```bash
 npm install
 ```
 
-2. Configure o arquivo `.env`
+### 2. Configuração do Ambiente
+Crie um arquivo .env a partir do modelo fornecido:
+
 ```bash
 cp example.env .env
 ```
 
-3. Execute o arquivo
+### 3. Execução do Arquivo
+Escolha uma das opções a seguir para gerar a saída desejada:
 
-Para gerar um arquivo xlsx
+Para gerar um arquivo XLSX:
 ```bash
 node "Nome Do Arquivo"
 ```
 
-Para gerar um arquivo json
+Para gerar um arquivo JSON:
 ```bash
 node "Nome Do Arquivo" -d
 ```
 
-Para somente listar no console
+Para listar informações apenas no console:
 ```bash
 node "Nome Do Arquivo" -l
 ```
 
-## Sugestão
+### Sugestão
+Se desejar abrir o arquivo XLSX diretamente no Visual Studio Code, você pode usar a extensão Excel Viewer.
 
-Caso queira abrir o xlsx no próprio vscode, pode ser utilizada a seguinte extensão:
+Para instalar, clique no link abaixo ou pesquise diretamente no VSCode:
 
-Para baixar clique no link:
-https://marketplace.visualstudio.com/items?itemName=GrapeCity.gc-excelviewer
-Ou
-Pesquisar no vscode: Excel Viewer
+Excel Viewer - GrapeCity
+
