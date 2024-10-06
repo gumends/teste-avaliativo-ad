@@ -1,6 +1,6 @@
 # Teste Avaliativo
 
-## Instruções
+### Instruções
 
 Para iniciar o projeto, siga as etapas abaixo:
 
@@ -37,7 +37,7 @@ Para listar informações apenas no console:
 node "Nome Do Arquivo" -l
 ```
 
-### Sugestão
+## Sugestão
 Se desejar abrir o arquivo XLSX diretamente no Visual Studio Code, você pode usar a extensão Excel Viewer.
 
 Para instalar, clique no link abaixo ou pesquise diretamente no VSCode:
