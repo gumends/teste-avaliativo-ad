@@ -7,7 +7,7 @@ npm install
 
 2. Configure o arquivo `.env`
 ```bash
-cp .env.example .env
+cp example.env .env
 ```
 
 3. Execute o arquivo
