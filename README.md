@@ -31,9 +31,7 @@ node "Nome Do Arquivo" -l
 
 Caso queira abrir o xlsx no próprio vscode, pode ser utilizada a seguinte extensão:
 
+Para baixar clique no link:
 https://marketplace.visualstudio.com/items?itemName=GrapeCity.gc-excelviewer
-
-```bash
-# OU
+Ou
 Pesquisar no vscode: Excel Viewer
-```
