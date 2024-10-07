@@ -18,6 +18,7 @@ Crie um arquivo .env a partir do modelo fornecido:
 ```bash
 cp example.env .env
 ```
+Após criar o arquivo .env basta inserir as respectivas informações solicitadas através do example.env
 
 ### 3. Execução do Arquivo
 Escolha uma das opções a seguir para gerar a saída desejada:
